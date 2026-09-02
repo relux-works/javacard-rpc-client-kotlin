@@ -4,8 +4,30 @@ import kotlin.test.Test
 import kotlin.test.assertContentEquals
 import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith
+import kotlin.test.assertFalse
+import kotlin.test.assertTrue
 
 class APDUPrimitivesTest {
+    private class RecordingTransport : APDUTransport {
+        var invalidated = false
+
+        override suspend fun transmit(command: APDUCommand): APDUResponse =
+            APDUResponse(byteArrayOf(0x90.toByte(), 0x00))
+
+        override fun invalidateSession() {
+            invalidated = true
+        }
+    }
+
+    @Test
+    fun `transport exposes synchronous session invalidation`() {
+        val transport = RecordingTransport()
+
+        assertFalse(transport.invalidated)
+        transport.invalidateSession()
+        assertTrue(transport.invalidated)
+    }
+
     @Test
     fun `command serializes short apdu with lc`() {
         val command = APDUCommand(

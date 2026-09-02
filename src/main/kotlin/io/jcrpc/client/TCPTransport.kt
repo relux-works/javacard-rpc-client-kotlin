@@ -53,6 +53,10 @@ class TCPTransport(
         socket = null
     }
 
+    override fun invalidateSession() {
+        disconnect()
+    }
+
     override suspend fun transmit(command: APDUCommand): APDUResponse {
         val inStream = input ?: throw APDUConnectionException("Not connected")
         val outStream = output ?: throw APDUConnectionException("Not connected")
