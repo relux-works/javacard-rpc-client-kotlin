@@ -1,0 +1,450 @@
+{
+  "Name": "input-0-namespace-1",
+  "Schema": {
+    "Applet": {
+      "Name": "Counter",
+      "Description": "Counter example with richer auth-like metadata and signing methods",
+      "Version": "1.0.0",
+      "AID": "F000000101",
+      "CLA": 176,
+      "StreamWorkspace": ""
+    },
+    "Methods": {
+      "decrement": {
+        "Name": "decrement",
+        "INS": 2,
+        "Description": "Decrement counter by amount",
+        "Request": {
+          "Fields": [
+            {
+              "Name": "amount",
+              "Type": "u8",
+              "Length": null,
+              "FixedLength": 0,
+              "MaxLength": 0,
+              "ChunkSize": 0,
+              "Location": "p1"
+            }
+          ]
+        },
+        "Response": {
+          "Fields": [
+            {
+              "Name": "value",
+              "Type": "u16",
+              "Length": null,
+              "FixedLength": 0,
+              "MaxLength": 0,
+              "ChunkSize": 0,
+              "Location": ""
+            }
+          ]
+        }
+      },
+      "echoMessage": {
+        "Name": "echoMessage",
+        "INS": 14,
+        "Description": "Roundtrip an arbitrary UTF-8 string through the applet",
+        "Request": {
+          "Fields": [
+            {
+              "Name": "message",
+              "Type": "string",
+              "Length": null,
+              "FixedLength": 0,
+              "MaxLength": 0,
+              "ChunkSize": 0,
+              "Location": "data"
+            }
+          ]
+        },
+        "Response": {
+          "Fields": [
+            {
+              "Name": "message",
+              "Type": "string",
+              "Length": null,
+              "FixedLength": 0,
+              "MaxLength": 0,
+              "ChunkSize": 0,
+              "Location": ""
+            }
+          ]
+        }
+      },
+      "get": {
+        "Name": "get",
+        "INS": 3,
+        "Description": "Get current counter value",
+        "Request": null,
+        "Response": {
+          "Fields": [
+            {
+              "Name": "value",
+              "Type": "u16",
+              "Length": null,
+              "FixedLength": 0,
+              "MaxLength": 0,
+              "ChunkSize": 0,
+              "Location": ""
+            }
+          ]
+        }
+      },
+      "getAppletInfo": {
+        "Name": "getAppletInfo",
+        "INS": 11,
+        "Description": "Return mock typed applet metadata",
+        "Request": null,
+        "Response": {
+          "Fields": [
+            {
+              "Name": "schemaVersion",
+              "Type": "u8",
+              "Length": null,
+              "FixedLength": 0,
+              "MaxLength": 0,
+              "ChunkSize": 0,
+              "Location": ""
+            },
+            {
+              "Name": "appletAid",
+              "Type": "bytes_fixed",
+              "Length": null,
+              "FixedLength": 5,
+              "MaxLength": 0,
+              "ChunkSize": 0,
+              "Location": ""
+            },
+            {
+              "Name": "versionMajor",
+              "Type": "u8",
+              "Length": null,
+              "FixedLength": 0,
+              "MaxLength": 0,
+              "ChunkSize": 0,
+              "Location": ""
+            },
+            {
+              "Name": "versionMinor",
+              "Type": "u8",
+              "Length": null,
+              "FixedLength": 0,
+              "MaxLength": 0,
+              "ChunkSize": 0,
+              "Location": ""
+            },
+            {
+              "Name": "versionPatch",
+              "Type": "u8",
+              "Length": null,
+              "FixedLength": 0,
+              "MaxLength": 0,
+              "ChunkSize": 0,
+              "Location": ""
+            },
+            {
+              "Name": "keyAlgorithm",
+              "Type": "u8",
+              "Length": null,
+              "FixedLength": 0,
+              "MaxLength": 0,
+              "ChunkSize": 0,
+              "Location": ""
+            },
+            {
+              "Name": "capabilities",
+              "Type": "u16",
+              "Length": null,
+              "FixedLength": 0,
+              "MaxLength": 0,
+              "ChunkSize": 0,
+              "Location": ""
+            }
+          ]
+        }
+      },
+      "getDisplayName": {
+        "Name": "getDisplayName",
+        "INS": 13,
+        "Description": "Return a UTF-8 display name assembled by the applet",
+        "Request": null,
+        "Response": {
+          "Fields": [
+            {
+              "Name": "displayName",
+              "Type": "string",
+              "Length": null,
+              "FixedLength": 0,
+              "MaxLength": 0,
+              "ChunkSize": 0,
+              "Location": ""
+            }
+          ]
+        }
+      },
+      "getImsi": {
+        "Name": "getImsi",
+        "INS": 10,
+        "Description": "Return mock IMSI bytes as ASCII digits",
+        "Request": null,
+        "Response": {
+          "Fields": [
+            {
+              "Name": "imsi",
+              "Type": "ascii",
+              "Length": null,
+              "FixedLength": 0,
+              "MaxLength": 0,
+              "ChunkSize": 0,
+              "Location": ""
+            }
+          ]
+        }
+      },
+      "getInfo": {
+        "Name": "getInfo",
+        "INS": 6,
+        "Description": "Get counter state snapshot with flags",
+        "Request": null,
+        "Response": {
+          "Fields": [
+            {
+              "Name": "value",
+              "Type": "u16",
+              "Length": null,
+              "FixedLength": 0,
+              "MaxLength": 0,
+              "ChunkSize": 0,
+              "Location": ""
+            },
+            {
+              "Name": "limit",
+              "Type": "u16",
+              "Length": null,
+              "FixedLength": 0,
+              "MaxLength": 0,
+              "ChunkSize": 0,
+              "Location": ""
+            },
+            {
+              "Name": "version",
+              "Type": "u8",
+              "Length": null,
+              "FixedLength": 0,
+              "MaxLength": 0,
+              "ChunkSize": 0,
+              "Location": ""
+            },
+            {
+              "Name": "hasStoredData",
+              "Type": "bool",
+              "Length": null,
+              "FixedLength": 0,
+              "MaxLength": 0,
+              "ChunkSize": 0,
+              "Location": ""
+            },
+            {
+              "Name": "isAtLimit",
+              "Type": "bool",
+              "Length": null,
+              "FixedLength": 0,
+              "MaxLength": 0,
+              "ChunkSize": 0,
+              "Location": ""
+            }
+          ]
+        }
+      },
+      "getSpki": {
+        "Name": "getSpki",
+        "INS": 9,
+        "Description": "Return mock DER SPKI bytes similar to auth-style applets",
+        "Request": null,
+        "Response": {
+          "Fields": [
+            {
+              "Name": "spki",
+              "Type": "bytes_fixed",
+              "Length": null,
+              "FixedLength": 91,
+              "MaxLength": 0,
+              "ChunkSize": 0,
+              "Location": ""
+            }
+          ]
+        }
+      },
+      "increment": {
+        "Name": "increment",
+        "INS": 1,
+        "Description": "Increment counter by amount",
+        "Request": {
+          "Fields": [
+            {
+              "Name": "amount",
+              "Type": "u8",
+              "Length": null,
+              "FixedLength": 0,
+              "MaxLength": 0,
+              "ChunkSize": 0,
+              "Location": "p1"
+            }
+          ]
+        },
+        "Response": {
+          "Fields": [
+            {
+              "Name": "value",
+              "Type": "u16",
+              "Length": null,
+              "FixedLength": 0,
+              "MaxLength": 0,
+              "ChunkSize": 0,
+              "Location": ""
+            }
+          ]
+        }
+      },
+      "load": {
+        "Name": "load",
+        "INS": 8,
+        "Description": "Load previously stored data blob",
+        "Request": null,
+        "Response": {
+          "Fields": [
+            {
+              "Name": "data",
+              "Type": "bytes",
+              "Length": null,
+              "FixedLength": 0,
+              "MaxLength": 0,
+              "ChunkSize": 0,
+              "Location": ""
+            }
+          ]
+        }
+      },
+      "reset": {
+        "Name": "reset",
+        "INS": 4,
+        "Description": "Reset counter to zero",
+        "Request": null,
+        "Response": null
+      },
+      "setLimit": {
+        "Name": "setLimit",
+        "INS": 5,
+        "Description": "Set upper limit for counter",
+        "Request": {
+          "Fields": [
+            {
+              "Name": "limit",
+              "Type": "u16",
+              "Length": null,
+              "FixedLength": 0,
+              "MaxLength": 0,
+              "ChunkSize": 0,
+              "Location": "data"
+            }
+          ]
+        },
+        "Response": null
+      },
+      "signChallenge": {
+        "Name": "signChallenge",
+        "INS": 12,
+        "Description": "Return deterministic mock DER signature bytes for the provided challenge",
+        "Request": {
+          "Fields": [
+            {
+              "Name": "challenge",
+              "Type": "bytes",
+              "Length": null,
+              "FixedLength": 0,
+              "MaxLength": 0,
+              "ChunkSize": 0,
+              "Location": "data"
+            }
+          ]
+        },
+        "Response": {
+          "Fields": [
+            {
+              "Name": "signature",
+              "Type": "bytes",
+              "Length": null,
+              "FixedLength": 0,
+              "MaxLength": 0,
+              "ChunkSize": 0,
+              "Location": ""
+            }
+          ]
+        }
+      },
+      "store": {
+        "Name": "store",
+        "INS": 7,
+        "Description": "Store arbitrary data blob (up to 128 bytes)",
+        "Request": {
+          "Fields": [
+            {
+              "Name": "data",
+              "Type": "bytes",
+              "Length": null,
+              "FixedLength": 0,
+              "MaxLength": 0,
+              "ChunkSize": 0,
+              "Location": "data"
+            }
+          ]
+        },
+        "Response": null
+      }
+    },
+    "StatusWords": {
+      "SW_DATA_TOO_LONG": {
+        "Name": "SW_DATA_TOO_LONG",
+        "Code": 27264,
+        "Description": "Data exceeds max size"
+      },
+      "SW_EMPTY_CHALLENGE": {
+        "Name": "SW_EMPTY_CHALLENGE",
+        "Code": 26368,
+        "Description": "Challenge must not be empty"
+      },
+      "SW_NO_DATA": {
+        "Name": "SW_NO_DATA",
+        "Code": 27272,
+        "Description": "No data stored"
+      },
+      "SW_OVERFLOW": {
+        "Name": "SW_OVERFLOW",
+        "Code": 27014,
+        "Description": "Counter would exceed limit"
+      },
+      "SW_UNDERFLOW": {
+        "Name": "SW_UNDERFLOW",
+        "Code": 27013,
+        "Description": "Counter would go below zero"
+      }
+    }
+  },
+  "Namespace": "custom.client",
+  "Files": [
+    {
+      "Name": "settings.gradle.kts",
+      "Data": "cGx1Z2luTWFuYWdlbWVudCB7CiAgICByZXBvc2l0b3JpZXMgewogICAgICAgIGdyYWRsZVBsdWdpblBvcnRhbCgpCiAgICAgICAgbWF2ZW5DZW50cmFsKCkKICAgIH0KfQoKcGx1Z2lucyB7CiAgICBpZCgib3JnLmdyYWRsZS50b29sY2hhaW5zLmZvb2pheS1yZXNvbHZlci1jb252ZW50aW9uIikgdmVyc2lvbiAiMS4wLjAiCn0KCmRlcGVuZGVuY3lSZXNvbHV0aW9uTWFuYWdlbWVudCB7CiAgICByZXBvc2l0b3JpZXNNb2RlLnNldChSZXBvc2l0b3JpZXNNb2RlLkZBSUxfT05fUFJPSkVDVF9SRVBPUykKICAgIHJlcG9zaXRvcmllcyB7CiAgICAgICAgbWF2ZW5DZW50cmFsKCkKICAgIH0KfQoKc291cmNlQ29udHJvbCB7CiAgICBnaXRSZXBvc2l0b3J5KHVyaSgiaHR0cHM6Ly9naXRodWIuY29tL3JlbHV4LXdvcmtzL2phdmFjYXJkLXJwYy1jbGllbnQta290bGluLmdpdCIpKSB7CiAgICAgICAgcHJvZHVjZXNNb2R1bGUoImlvLmpjcnBjOmphdmFjYXJkLXJwYy1jbGllbnQta290bGluIikKICAgIH0KfQoKcm9vdFByb2plY3QubmFtZSA9ICJjb3VudGVyLWNsaWVudC1rb3RsaW4iCg=="
+    },
+    {
+      "Name": "build.gradle.kts",
+      "Data": "cGx1Z2lucyB7CiAgICBrb3RsaW4oImp2bSIpIHZlcnNpb24gIjIuMS4xMCIKfQoKZ3JvdXAgPSAiY3VzdG9tLmNsaWVudCIKdmVyc2lvbiA9ICIxLjAuMCIKCmtvdGxpbiB7CiAgICBqdm1Ub29sY2hhaW4oMTcpCn0KCmRlcGVuZGVuY2llcyB7CiAgICBpbXBsZW1lbnRhdGlvbigiaW8uamNycGM6amF2YWNhcmQtcnBjLWNsaWVudC1rb3RsaW46MC4yLjAiKQogICAgdGVzdEltcGxlbWVudGF0aW9uKGtvdGxpbigidGVzdCIpKQp9Cgp0YXNrcy50ZXN0IHsKICAgIHVzZUpVbml0UGxhdGZvcm0oKQp9Cg=="
+    },
+    {
+      "Name": "src/main/kotlin/custom/client/CounterClient.kt",
+      "Data": "cGFja2FnZSBjdXN0b20uY2xpZW50CgppbXBvcnQgaW8uamNycGMuY2xpZW50LkFQRFVDb21tYW5kCmltcG9ydCBpby5qY3JwYy5jbGllbnQuQVBEVVJlc3BvbnNlCmltcG9ydCBpby5qY3JwYy5jbGllbnQuQVBEVVRyYW5zcG9ydAppbXBvcnQgamF2YS5pby5CeXRlQXJyYXlPdXRwdXRTdHJlYW0KCgpwdWJsaWMgaW50ZXJmYWNlIENvdW50ZXJDbGllbnRQcm90b2NvbCB7CiAgICBzdXNwZW5kIGZ1biBzZWxlY3QoKQogICAgc3VzcGVuZCBmdW4gaW5jcmVtZW50KGFtb3VudDogVUJ5dGUpOiBVU2hvcnQKICAgIHN1c3BlbmQgZnVuIGRlY3JlbWVudChhbW91bnQ6IFVCeXRlKTogVVNob3J0CiAgICBzdXNwZW5kIGZ1biBnZXQoKTogVVNob3J0CiAgICBzdXNwZW5kIGZ1biByZXNldCgpCiAgICBzdXNwZW5kIGZ1biBzZXRMaW1pdChsaW1pdDogVVNob3J0KQogICAgc3VzcGVuZCBmdW4gZ2V0SW5mbygpOiBDb3VudGVySW5mbwogICAgc3VzcGVuZCBmdW4gc3RvcmUoZGF0YTogQnl0ZUFycmF5KQogICAgc3VzcGVuZCBmdW4gbG9hZCgpOiBCeXRlQXJyYXkKICAgIHN1c3BlbmQgZnVuIGdldFNwa2koKTogQnl0ZUFycmF5CiAgICBzdXNwZW5kIGZ1biBnZXRJbXNpKCk6IFN0cmluZwogICAgc3VzcGVuZCBmdW4gZ2V0QXBwbGV0SW5mbygpOiBDb3VudGVyQXBwbGV0SW5mbwogICAgc3VzcGVuZCBmdW4gc2lnbkNoYWxsZW5nZShjaGFsbGVuZ2U6IEJ5dGVBcnJheSk6IEJ5dGVBcnJheQogICAgc3VzcGVuZCBmdW4gZ2V0RGlzcGxheU5hbWUoKTogU3RyaW5nCiAgICBzdXNwZW5kIGZ1biBlY2hvTWVzc2FnZShtZXNzYWdlOiBTdHJpbmcpOiBTdHJpbmcKfQoKcHVibGljIHNlYWxlZCBjbGFzcyBDb3VudGVyQ2xpZW50RXhjZXB0aW9uKG1lc3NhZ2U6IFN0cmluZykgOiBFeGNlcHRpb24obWVzc2FnZSkgewogICAgcHVibGljIGNsYXNzIFN0YXR1c1dvcmQocHVibGljIHZhbCBzdzogVVNob3J0KSA6CiAgICAgICAgQ291bnRlckNsaWVudEV4Y2VwdGlvbigiU3RhdHVzIHdvcmQ6IDB4JTA0WCIuZm9ybWF0KHN3LnRvSW50KCkpKQoKICAgIHB1YmxpYyBvYmplY3QgSW52YWxpZFJlc3BvbnNlIDogQ291bnRlckNsaWVudEV4Y2VwdGlvbigiSW52YWxpZCByZXNwb25zZSIpCgp9CgpwdWJsaWMgY2xhc3MgQ291bnRlckNsaWVudCgKICAgIHByaXZhdGUgdmFsIHRyYW5zcG9ydDogQVBEVVRyYW5zcG9ydCwKKSA6IENvdW50ZXJDbGllbnRQcm90b2NvbCB7CgoKICAgIHB1YmxpYyBjb21wYW5pb24gb2JqZWN0IHsKICAgICAgICBwdWJsaWMgdmFsIGFpZDogQnl0ZUFycmF5ID0gYnl0ZUFycmF5T2YoMHhGMC50b0J5dGUoKSwgMHgwMC50b0J5dGUoKSwgMHgwMC50b0J5dGUoKSwgMHgwMS50b0J5dGUoKSwgMHgwMS50b0J5dGUoKSkKICAgICAgICBwcml2YXRlIGNvbnN0IHZhbCBDTEE6IFVCeXRlID0gMHhCMHUKICAgIH0KCiAgICBvdmVycmlkZSBzdXNwZW5kIGZ1biBzZWxlY3QoKSB7CiAgICAgICAgdmFsIHJlc3BvbnNlID0gdHJhbnNtaXQoY2xhID0gMHgwMHUsIGlucyA9IDB4QTR1LCBwMSA9IDB4MDR1LCBwMiA9IDB4MDB1LCBkYXRhID0gYWlkKQogICAgICAgIGNoZWNrU3RhdHVzV29yZChyZXNwb25zZS5zdykKICAgIH0KCiAgICBvdmVycmlkZSBzdXNwZW5kIGZ1biBpbmNyZW1lbnQoYW1vdW50OiBVQnl0ZSk6IFVTaG9ydCB7CiAgICAgICAgdmFsIHJlc3BvbnNlID0gdHJhbnNtaXQoY2xhID0gQ0xBLCBpbnMgPSAweDAxdSwgcDEgPSBhbW91bnQsIHAyID0gMHgwMHUsIGRhdGEgPSBudWxsKQogICAgICAgIGNoZWNrU3RhdHVzV29yZChyZXNwb25zZS5zdykKICAgICAgICBpZiAocmVzcG9uc2UuZGF0YS5zaXplICE9IDIpIGludmFsaWRSZXNwb25zZSgpCiAgICAgICAgcmV0dXJuIHJlYWRVMTYocmVzcG9uc2UuZGF0YSwgMCkKICAgIH0KCiAgICBvdmVycmlkZSBzdXNwZW5kIGZ1biBkZWNyZW1lbnQoYW1vdW50OiBVQnl0ZSk6IFVTaG9ydCB7CiAgICAgICAgdmFsIHJlc3BvbnNlID0gdHJhbnNtaXQoY2xhID0gQ0xBLCBpbnMgPSAweDAydSwgcDEgPSBhbW91bnQsIHAyID0gMHgwMHUsIGRhdGEgPSBudWxsKQogICAgICAgIGNoZWNrU3RhdHVzV29yZChyZXNwb25zZS5zdykKICAgICAgICBpZiAocmVzcG9uc2UuZGF0YS5zaXplICE9IDIpIGludmFsaWRSZXNwb25zZSgpCiAgICAgICAgcmV0dXJuIHJlYWRVMTYocmVzcG9uc2UuZGF0YSwgMCkKICAgIH0KCiAgICBvdmVycmlkZSBzdXNwZW5kIGZ1biBnZXQoKTogVVNob3J0IHsKICAgICAgICB2YWwgcmVzcG9uc2UgPSB0cmFuc21pdChjbGEgPSBDTEEsIGlucyA9IDB4MDN1LCBwMSA9IDB4MDB1LCBwMiA9IDB4MDB1LCBkYXRhID0gbnVsbCkKICAgICAgICBjaGVja1N0YXR1c1dvcmQocmVzcG9uc2Uuc3cpCiAgICAgICAgaWYgKHJlc3BvbnNlLmRhdGEuc2l6ZSAhPSAyKSBpbnZhbGlkUmVzcG9uc2UoKQogICAgICAgIHJldHVybiByZWFkVTE2KHJlc3BvbnNlLmRhdGEsIDApCiAgICB9CgogICAgb3ZlcnJpZGUgc3VzcGVuZCBmdW4gcmVzZXQoKSB7CiAgICAgICAgdmFsIHJlc3BvbnNlID0gdHJhbnNtaXQoY2xhID0gQ0xBLCBpbnMgPSAweDA0dSwgcDEgPSAweDAwdSwgcDIgPSAweDAwdSwgZGF0YSA9IG51bGwpCiAgICAgICAgY2hlY2tTdGF0dXNXb3JkKHJlc3BvbnNlLnN3KQogICAgICAgIGlmIChyZXNwb25zZS5kYXRhLmlzTm90RW1wdHkoKSkgaW52YWxpZFJlc3BvbnNlKCkKICAgIH0KCiAgICBvdmVycmlkZSBzdXNwZW5kIGZ1biBzZXRMaW1pdChsaW1pdDogVVNob3J0KSB7CiAgICAgICAgdmFsIGRhdGEgPSBieXRlQXJyYXlPZigoKChsaW1pdC50b0ludCgpIHVzaHIgOCkgYW5kIDB4RkYpLnRvQnl0ZSgpKSwgKChsaW1pdC50b0ludCgpIGFuZCAweEZGKS50b0J5dGUoKSkpCiAgICAgICAgdmFsIHJlc3BvbnNlID0gdHJhbnNtaXQoY2xhID0gQ0xBLCBpbnMgPSAweDA1dSwgcDEgPSAweDAwdSwgcDIgPSAweDAwdSwgZGF0YSA9IGRhdGEpCiAgICAgICAgY2hlY2tTdGF0dXNXb3JkKHJlc3BvbnNlLnN3KQogICAgICAgIGlmIChyZXNwb25zZS5kYXRhLmlzTm90RW1wdHkoKSkgaW52YWxpZFJlc3BvbnNlKCkKICAgIH0KCiAgICBvdmVycmlkZSBzdXNwZW5kIGZ1biBnZXRJbmZvKCk6IENvdW50ZXJJbmZvIHsKICAgICAgICB2YWwgcmVzcG9uc2UgPSB0cmFuc21pdChjbGEgPSBDTEEsIGlucyA9IDB4MDZ1LCBwMSA9IDB4MDB1LCBwMiA9IDB4MDB1LCBkYXRhID0gbnVsbCkKICAgICAgICBjaGVja1N0YXR1c1dvcmQocmVzcG9uc2Uuc3cpCiAgICAgICAgaWYgKHJlc3BvbnNlLmRhdGEuc2l6ZSAhPSA3KSBpbnZhbGlkUmVzcG9uc2UoKQogICAgICAgIHJldHVybiBDb3VudGVySW5mbygKICAgICAgICAgICAgdmFsdWUgPSByZWFkVTE2KHJlc3BvbnNlLmRhdGEsIDApLAogICAgICAgICAgICBsaW1pdCA9IHJlYWRVMTYocmVzcG9uc2UuZGF0YSwgMiksCiAgICAgICAgICAgIHZlcnNpb24gPSByZWFkVTgocmVzcG9uc2UuZGF0YSwgNCksCiAgICAgICAgICAgIGhhc1N0b3JlZERhdGEgPSByZWFkQm9vbChyZXNwb25zZS5kYXRhLCA1KSwKICAgICAgICAgICAgaXNBdExpbWl0ID0gcmVhZEJvb2wocmVzcG9uc2UuZGF0YSwgNikKICAgICAgICApCiAgICB9CgogICAgb3ZlcnJpZGUgc3VzcGVuZCBmdW4gc3RvcmUoZGF0YTogQnl0ZUFycmF5KSB7CiAgICAgICAgdmFsIHJlc3BvbnNlID0gdHJhbnNtaXQoY2xhID0gQ0xBLCBpbnMgPSAweDA3dSwgcDEgPSAweDAwdSwgcDIgPSAweDAwdSwgZGF0YSA9IGRhdGEpCiAgICAgICAgY2hlY2tTdGF0dXNXb3JkKHJlc3BvbnNlLnN3KQogICAgICAgIGlmIChyZXNwb25zZS5kYXRhLmlzTm90RW1wdHkoKSkgaW52YWxpZFJlc3BvbnNlKCkKICAgIH0KCiAgICBvdmVycmlkZSBzdXNwZW5kIGZ1biBsb2FkKCk6IEJ5dGVBcnJheSB7CiAgICAgICAgdmFsIHJlc3BvbnNlID0gdHJhbnNtaXQoY2xhID0gQ0xBLCBpbnMgPSAweDA4dSwgcDEgPSAweDAwdSwgcDIgPSAweDAwdSwgZGF0YSA9IG51bGwpCiAgICAgICAgY2hlY2tTdGF0dXNXb3JkKHJlc3BvbnNlLnN3KQogICAgICAgIHJldHVybiByZXNwb25zZS5kYXRhCiAgICB9CgogICAgb3ZlcnJpZGUgc3VzcGVuZCBmdW4gZ2V0U3BraSgpOiBCeXRlQXJyYXkgewogICAgICAgIHZhbCByZXNwb25zZSA9IHRyYW5zbWl0KGNsYSA9IENMQSwgaW5zID0gMHgwOXUsIHAxID0gMHgwMHUsIHAyID0gMHgwMHUsIGRhdGEgPSBudWxsKQogICAgICAgIGNoZWNrU3RhdHVzV29yZChyZXNwb25zZS5zdykKICAgICAgICBpZiAocmVzcG9uc2UuZGF0YS5zaXplICE9IDkxKSBpbnZhbGlkUmVzcG9uc2UoKQogICAgICAgIHJldHVybiByZWFkQnl0ZXMocmVzcG9uc2UuZGF0YSwgMCwgOTEpCiAgICB9CgogICAgb3ZlcnJpZGUgc3VzcGVuZCBmdW4gZ2V0SW1zaSgpOiBTdHJpbmcgewogICAgICAgIHZhbCByZXNwb25zZSA9IHRyYW5zbWl0KGNsYSA9IENMQSwgaW5zID0gMHgwQXUsIHAxID0gMHgwMHUsIHAyID0gMHgwMHUsIGRhdGEgPSBudWxsKQogICAgICAgIGNoZWNrU3RhdHVzV29yZChyZXNwb25zZS5zdykKICAgICAgICByZXR1cm4gcmVhZEFTQ0lJKHJlc3BvbnNlLmRhdGEsIDApCiAgICB9CgogICAgb3ZlcnJpZGUgc3VzcGVuZCBmdW4gZ2V0QXBwbGV0SW5mbygpOiBDb3VudGVyQXBwbGV0SW5mbyB7CiAgICAgICAgdmFsIHJlc3BvbnNlID0gdHJhbnNtaXQoY2xhID0gQ0xBLCBpbnMgPSAweDBCdSwgcDEgPSAweDAwdSwgcDIgPSAweDAwdSwgZGF0YSA9IG51bGwpCiAgICAgICAgY2hlY2tTdGF0dXNXb3JkKHJlc3BvbnNlLnN3KQogICAgICAgIGlmIChyZXNwb25zZS5kYXRhLnNpemUgIT0gMTIpIGludmFsaWRSZXNwb25zZSgpCiAgICAgICAgcmV0dXJuIENvdW50ZXJBcHBsZXRJbmZvKAogICAgICAgICAgICBzY2hlbWFWZXJzaW9uID0gcmVhZFU4KHJlc3BvbnNlLmRhdGEsIDApLAogICAgICAgICAgICBhcHBsZXRBaWQgPSByZWFkQnl0ZXMocmVzcG9uc2UuZGF0YSwgMSwgNSksCiAgICAgICAgICAgIHZlcnNpb25NYWpvciA9IHJlYWRVOChyZXNwb25zZS5kYXRhLCA2KSwKICAgICAgICAgICAgdmVyc2lvbk1pbm9yID0gcmVhZFU4KHJlc3BvbnNlLmRhdGEsIDcpLAogICAgICAgICAgICB2ZXJzaW9uUGF0Y2ggPSByZWFkVTgocmVzcG9uc2UuZGF0YSwgOCksCiAgICAgICAgICAgIGtleUFsZ29yaXRobSA9IHJlYWRVOChyZXNwb25zZS5kYXRhLCA5KSwKICAgICAgICAgICAgY2FwYWJpbGl0aWVzID0gcmVhZFUxNihyZXNwb25zZS5kYXRhLCAxMCkKICAgICAgICApCiAgICB9CgogICAgb3ZlcnJpZGUgc3VzcGVuZCBmdW4gc2lnbkNoYWxsZW5nZShjaGFsbGVuZ2U6IEJ5dGVBcnJheSk6IEJ5dGVBcnJheSB7CiAgICAgICAgdmFsIHJlc3BvbnNlID0gdHJhbnNtaXQoY2xhID0gQ0xBLCBpbnMgPSAweDBDdSwgcDEgPSAweDAwdSwgcDIgPSAweDAwdSwgZGF0YSA9IGNoYWxsZW5nZSkKICAgICAgICBjaGVja1N0YXR1c1dvcmQocmVzcG9uc2Uuc3cpCiAgICAgICAgcmV0dXJuIHJlc3BvbnNlLmRhdGEKICAgIH0KCiAgICBvdmVycmlkZSBzdXNwZW5kIGZ1biBnZXREaXNwbGF5TmFtZSgpOiBTdHJpbmcgewogICAgICAgIHZhbCByZXNwb25zZSA9IHRyYW5zbWl0KGNsYSA9IENMQSwgaW5zID0gMHgwRHUsIHAxID0gMHgwMHUsIHAyID0gMHgwMHUsIGRhdGEgPSBudWxsKQogICAgICAgIGNoZWNrU3RhdHVzV29yZChyZXNwb25zZS5zdykKICAgICAgICByZXR1cm4gcmVhZFN0cmluZyhyZXNwb25zZS5kYXRhLCAwKQogICAgfQoKICAgIG92ZXJyaWRlIHN1c3BlbmQgZnVuIGVjaG9NZXNzYWdlKG1lc3NhZ2U6IFN0cmluZyk6IFN0cmluZyB7CiAgICAgICAgdmFsIGRhdGEgPSB1dGY4Qnl0ZXMobWVzc2FnZSkKICAgICAgICB2YWwgcmVzcG9uc2UgPSB0cmFuc21pdChjbGEgPSBDTEEsIGlucyA9IDB4MEV1LCBwMSA9IDB4MDB1LCBwMiA9IDB4MDB1LCBkYXRhID0gZGF0YSkKICAgICAgICBjaGVja1N0YXR1c1dvcmQocmVzcG9uc2Uuc3cpCiAgICAgICAgcmV0dXJuIHJlYWRTdHJpbmcocmVzcG9uc2UuZGF0YSwgMCkKICAgIH0KCgoKICAgIHByaXZhdGUgc3VzcGVuZCBmdW4gdHJhbnNtaXQoCiAgICAgICAgY2xhOiBVQnl0ZSwKICAgICAgICBpbnM6IFVCeXRlLAogICAgICAgIHAxOiBVQnl0ZSwKICAgICAgICBwMjogVUJ5dGUsCiAgICAgICAgZGF0YTogQnl0ZUFycmF5PywKICAgICk6IEFQRFVSZXNwb25zZSA9IHRyYW5zcG9ydC50cmFuc21pdChBUERVQ29tbWFuZChjbGEsIGlucywgcDEsIHAyLCBkYXRhKSkKCiAgICBwcml2YXRlIGZ1biBjaGVja1N0YXR1c1dvcmQoc3c6IFVTaG9ydCkgewogICAgICAgIGlmIChzdyAhPSAweDkwMDB1LnRvVVNob3J0KCkpIHsKICAgICAgICAgICAgdGhyb3cgQ291bnRlckNsaWVudEV4Y2VwdGlvbi5TdGF0dXNXb3JkKHN3KQogICAgICAgIH0KICAgIH0KCiAgICBwcml2YXRlIGZ1biByZWFkVTgoZGF0YTogQnl0ZUFycmF5LCBvZmZzZXQ6IEludCk6IFVCeXRlIHsKICAgICAgICBlbnN1cmVSZWFkYWJsZVJhbmdlKGRhdGEsIG9mZnNldCwgMSkKICAgICAgICByZXR1cm4gZGF0YVtvZmZzZXRdLnRvVUJ5dGUoKQogICAgfQoKICAgIHByaXZhdGUgZnVuIHJlYWRVMTYoZGF0YTogQnl0ZUFycmF5LCBvZmZzZXQ6IEludCk6IFVTaG9ydCB7CiAgICAgICAgZW5zdXJlUmVhZGFibGVSYW5nZShkYXRhLCBvZmZzZXQsIDIpCiAgICAgICAgdmFsIGhpID0gZGF0YVtvZmZzZXRdLnRvVUJ5dGUoKS50b1VJbnQoKSBzaGwgOAogICAgICAgIHZhbCBsbyA9IGRhdGFbb2Zmc2V0ICsgMV0udG9VQnl0ZSgpLnRvVUludCgpCiAgICAgICAgcmV0dXJuIChoaSBvciBsbykudG9VU2hvcnQoKQogICAgfQoKICAgIHByaXZhdGUgZnVuIHJlYWRVMzIoZGF0YTogQnl0ZUFycmF5LCBvZmZzZXQ6IEludCk6IFVJbnQgewogICAgICAgIGVuc3VyZVJlYWRhYmxlUmFuZ2UoZGF0YSwgb2Zmc2V0LCA0KQogICAgICAgIHZhbCBiMCA9IGRhdGFbb2Zmc2V0XS50b1VCeXRlKCkudG9VSW50KCkgc2hsIDI0CiAgICAgICAgdmFsIGIxID0gZGF0YVtvZmZzZXQgKyAxXS50b1VCeXRlKCkudG9VSW50KCkgc2hsIDE2CiAgICAgICAgdmFsIGIyID0gZGF0YVtvZmZzZXQgKyAyXS50b1VCeXRlKCkudG9VSW50KCkgc2hsIDgKICAgICAgICB2YWwgYjMgPSBkYXRhW29mZnNldCArIDNdLnRvVUJ5dGUoKS50b1VJbnQoKQogICAgICAgIHJldHVybiBiMCBvciBiMSBvciBiMiBvciBiMwogICAgfQoKICAgIHByaXZhdGUgZnVuIHJlYWRCb29sKGRhdGE6IEJ5dGVBcnJheSwgb2Zmc2V0OiBJbnQpOiBCb29sZWFuIHsKICAgICAgICByZXR1cm4gd2hlbiAocmVhZFU4KGRhdGEsIG9mZnNldCkpIHsKICAgICAgICAgICAgMHgwMHUudG9VQnl0ZSgpIC0+IGZhbHNlCiAgICAgICAgICAgIDB4MDF1LnRvVUJ5dGUoKSAtPiB0cnVlCiAgICAgICAgICAgIGVsc2UgLT4gdGhyb3cgQ291bnRlckNsaWVudEV4Y2VwdGlvbi5JbnZhbGlkUmVzcG9uc2UKICAgICAgICB9CiAgICB9CgogICAgcHJpdmF0ZSBmdW4gcmVhZEJ5dGVzKGRhdGE6IEJ5dGVBcnJheSwgb2Zmc2V0OiBJbnQsIGNvdW50OiBJbnQpOiBCeXRlQXJyYXkgewogICAgICAgIGVuc3VyZVJlYWRhYmxlUmFuZ2UoZGF0YSwgb2Zmc2V0LCBjb3VudCkKICAgICAgICByZXR1cm4gZGF0YS5jb3B5T2ZSYW5nZShvZmZzZXQsIG9mZnNldCArIGNvdW50KQogICAgfQoKICAgIHByaXZhdGUgZnVuIHJlYWRCeXRlcyhkYXRhOiBCeXRlQXJyYXksIG9mZnNldDogSW50KTogQnl0ZUFycmF5IHsKICAgICAgICBpZiAob2Zmc2V0IDwgMCB8fCBvZmZzZXQgPiBkYXRhLnNpemUpIHsKICAgICAgICAgICAgdGhyb3cgQ291bnRlckNsaWVudEV4Y2VwdGlvbi5JbnZhbGlkUmVzcG9uc2UKICAgICAgICB9CiAgICAgICAgcmV0dXJuIGRhdGEuY29weU9mUmFuZ2Uob2Zmc2V0LCBkYXRhLnNpemUpCiAgICB9CgogICAgcHJpdmF0ZSBmdW4gcmVhZEFTQ0lJKGRhdGE6IEJ5dGVBcnJheSwgb2Zmc2V0OiBJbnQsIGNvdW50OiBJbnQpOiBTdHJpbmcgPSBkZWNvZGVBU0NJSShyZWFkQnl0ZXMoZGF0YSwgb2Zmc2V0LCBjb3VudCkpCgogICAgcHJpdmF0ZSBmdW4gcmVhZEFTQ0lJKGRhdGE6IEJ5dGVBcnJheSwgb2Zmc2V0OiBJbnQpOiBTdHJpbmcgPSBkZWNvZGVBU0NJSShyZWFkQnl0ZXMoZGF0YSwgb2Zmc2V0KSkKCiAgICBwcml2YXRlIGZ1biBkZWNvZGVBU0NJSShkYXRhOiBCeXRlQXJyYXkpOiBTdHJpbmcgewogICAgICAgIGlmIChkYXRhLmFueSB7IGl0LnRvSW50KCkgYW5kIDB4ODAgIT0gMCB9KSB7CiAgICAgICAgICAgIHRocm93IENvdW50ZXJDbGllbnRFeGNlcHRpb24uSW52YWxpZFJlc3BvbnNlCiAgICAgICAgfQogICAgICAgIHJldHVybiBkYXRhLnRvU3RyaW5nKENoYXJzZXRzLlVTX0FTQ0lJKQogICAgfQoKICAgIHByaXZhdGUgZnVuIGFzY2lpQnl0ZXModmFsdWU6IFN0cmluZyk6IEJ5dGVBcnJheSB7CiAgICAgICAgaWYgKHZhbHVlLmFueSB7IGl0LmNvZGUgPiAweDdGIH0pIHsKICAgICAgICAgICAgdGhyb3cgQ291bnRlckNsaWVudEV4Y2VwdGlvbi5JbnZhbGlkUmVzcG9uc2UKICAgICAgICB9CiAgICAgICAgcmV0dXJuIHZhbHVlLnRvQnl0ZUFycmF5KENoYXJzZXRzLlVTX0FTQ0lJKQogICAgfQoKICAgIHByaXZhdGUgZnVuIHJlYWRTdHJpbmcoZGF0YTogQnl0ZUFycmF5LCBvZmZzZXQ6IEludCk6IFN0cmluZyB7CiAgICAgICAgdmFsIGJ5dGVzID0gcmVhZEJ5dGVzKGRhdGEsIG9mZnNldCkKICAgICAgICByZXR1cm4gdHJ5IHsKICAgICAgICAgICAgYnl0ZXMudG9TdHJpbmcoQ2hhcnNldHMuVVRGXzgpCiAgICAgICAgfSBjYXRjaCAoXzogRXhjZXB0aW9uKSB7CiAgICAgICAgICAgIHRocm93IENvdW50ZXJDbGllbnRFeGNlcHRpb24uSW52YWxpZFJlc3BvbnNlCiAgICAgICAgfQogICAgfQoKICAgIHByaXZhdGUgZnVuIHV0ZjhCeXRlcyh2YWx1ZTogU3RyaW5nKTogQnl0ZUFycmF5ID0gdmFsdWUudG9CeXRlQXJyYXkoQ2hhcnNldHMuVVRGXzgpCgogICAgcHJpdmF0ZSBmdW4gaW52YWxpZFJlc3BvbnNlKCk6IE5vdGhpbmcgPSB0aHJvdyBDb3VudGVyQ2xpZW50RXhjZXB0aW9uLkludmFsaWRSZXNwb25zZQoKICAgIHByaXZhdGUgZnVuIGVuc3VyZVJlYWRhYmxlUmFuZ2UoZGF0YTogQnl0ZUFycmF5LCBvZmZzZXQ6IEludCwgbGVuZ3RoOiBJbnQpIHsKICAgICAgICBpZiAob2Zmc2V0IDwgMCB8fCBsZW5ndGggPCAwIHx8IG9mZnNldCA+IGRhdGEuc2l6ZSB8fCBsZW5ndGggPiBkYXRhLnNpemUgLSBvZmZzZXQpIHsKICAgICAgICAgICAgdGhyb3cgQ291bnRlckNsaWVudEV4Y2VwdGlvbi5JbnZhbGlkUmVzcG9uc2UKICAgICAgICB9CiAgICB9Cn0KCnB1YmxpYyBkYXRhIGNsYXNzIENvdW50ZXJJbmZvKAogICAgdmFsIHZhbHVlOiBVU2hvcnQsCiAgICB2YWwgbGltaXQ6IFVTaG9ydCwKICAgIHZhbCB2ZXJzaW9uOiBVQnl0ZSwKICAgIHZhbCBoYXNTdG9yZWREYXRhOiBCb29sZWFuLAogICAgdmFsIGlzQXRMaW1pdDogQm9vbGVhbgopCgpwdWJsaWMgZGF0YSBjbGFzcyBDb3VudGVyQXBwbGV0SW5mbygKICAgIHZhbCBzY2hlbWFWZXJzaW9uOiBVQnl0ZSwKICAgIHZhbCBhcHBsZXRBaWQ6IEJ5dGVBcnJheSwKICAgIHZhbCB2ZXJzaW9uTWFqb3I6IFVCeXRlLAogICAgdmFsIHZlcnNpb25NaW5vcjogVUJ5dGUsCiAgICB2YWwgdmVyc2lvblBhdGNoOiBVQnl0ZSwKICAgIHZhbCBrZXlBbGdvcml0aG06IFVCeXRlLAogICAgdmFsIGNhcGFiaWxpdGllczogVVNob3J0CikKCgpwdWJsaWMgb2JqZWN0IENvdW50ZXJFcnJvciB7CiAgICBwdWJsaWMgdmFsIFNXX1VOREVSRkxPVzogVVNob3J0ID0gMHg2OTg1dS50b1VTaG9ydCgpCiAgICBwdWJsaWMgdmFsIFNXX09WRVJGTE9XOiBVU2hvcnQgPSAweDY5ODZ1LnRvVVNob3J0KCkKICAgIHB1YmxpYyB2YWwgU1dfTk9fREFUQTogVVNob3J0ID0gMHg2QTg4dS50b1VTaG9ydCgpCiAgICBwdWJsaWMgdmFsIFNXX0RBVEFfVE9PX0xPTkc6IFVTaG9ydCA9IDB4NkE4MHUudG9VU2hvcnQoKQogICAgcHVibGljIHZhbCBTV19FTVBUWV9DSEFMTEVOR0U6IFVTaG9ydCA9IDB4NjcwMHUudG9VU2hvcnQoKQp9Cg=="
+    }
+  ],
+  "InputSHA256": "7649a703ec8ddab404460a3d53a34a097da8fe2f45094d75249821b58ac6dedc"
+}

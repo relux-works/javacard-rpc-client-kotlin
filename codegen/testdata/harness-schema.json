@@ -1,0 +1,181 @@
+{
+  "Applet": {
+    "Name": "StreamDemo",
+    "Description": "Bounded bidirectional stream fixture",
+    "Version": "1.0.0",
+    "AID": "F000000102",
+    "CLA": 176,
+    "StreamWorkspace": ""
+  },
+  "Methods": {
+    "export": {
+      "Name": "export",
+      "INS": 64,
+      "Description": "",
+      "Request": {
+        "Fields": [
+          {
+            "Name": "selector",
+            "Type": "u8",
+            "Length": null,
+            "FixedLength": 0,
+            "MaxLength": 0,
+            "ChunkSize": 0,
+            "Location": "data"
+          }
+        ]
+      },
+      "Response": {
+        "Fields": [
+          {
+            "Name": "packet",
+            "Type": "stream",
+            "Length": null,
+            "FixedLength": 0,
+            "MaxLength": 2048,
+            "ChunkSize": 224,
+            "Location": ""
+          }
+        ]
+      }
+    },
+    "getFixedInfo": {
+      "Name": "getFixedInfo",
+      "INS": 2,
+      "Description": "",
+      "Request": null,
+      "Response": {
+        "Fields": [
+          {
+            "Name": "schema",
+            "Type": "u8",
+            "Length": null,
+            "FixedLength": 0,
+            "MaxLength": 0,
+            "ChunkSize": 0,
+            "Location": ""
+          },
+          {
+            "Name": "identity",
+            "Type": "bytes_fixed",
+            "Length": null,
+            "FixedLength": 10,
+            "MaxLength": 0,
+            "ChunkSize": 0,
+            "Location": ""
+          },
+          {
+            "Name": "generation",
+            "Type": "u32",
+            "Length": null,
+            "FixedLength": 0,
+            "MaxLength": 0,
+            "ChunkSize": 0,
+            "Location": ""
+          }
+        ]
+      }
+    },
+    "getVersion": {
+      "Name": "getVersion",
+      "INS": 1,
+      "Description": "",
+      "Request": null,
+      "Response": {
+        "Fields": [
+          {
+            "Name": "version",
+            "Type": "u8",
+            "Length": null,
+            "FixedLength": 0,
+            "MaxLength": 0,
+            "ChunkSize": 0,
+            "Location": ""
+          }
+        ]
+      }
+    },
+    "issueReport": {
+      "Name": "issueReport",
+      "INS": 48,
+      "Description": "",
+      "Request": null,
+      "Response": {
+        "Fields": [
+          {
+            "Name": "report",
+            "Type": "stream",
+            "Length": null,
+            "FixedLength": 0,
+            "MaxLength": 64,
+            "ChunkSize": 32,
+            "Location": ""
+          }
+        ]
+      }
+    },
+    "processPacket": {
+      "Name": "processPacket",
+      "INS": 32,
+      "Description": "",
+      "Request": {
+        "Fields": [
+          {
+            "Name": "requestPacket",
+            "Type": "stream",
+            "Length": null,
+            "FixedLength": 0,
+            "MaxLength": 1792,
+            "ChunkSize": 192,
+            "Location": "data"
+          }
+        ]
+      },
+      "Response": {
+        "Fields": [
+          {
+            "Name": "resultPacket",
+            "Type": "stream",
+            "Length": null,
+            "FixedLength": 0,
+            "MaxLength": 1792,
+            "ChunkSize": 192,
+            "Location": ""
+          }
+        ]
+      }
+    },
+    "sign": {
+      "Name": "sign",
+      "INS": 48,
+      "Description": "",
+      "Request": {
+        "Fields": [
+          {
+            "Name": "payload",
+            "Type": "stream",
+            "Length": null,
+            "FixedLength": 0,
+            "MaxLength": 1024,
+            "ChunkSize": 192,
+            "Location": ""
+          }
+        ]
+      },
+      "Response": {
+        "Fields": [
+          {
+            "Name": "receipt",
+            "Type": "u16",
+            "Length": null,
+            "FixedLength": 0,
+            "MaxLength": 0,
+            "ChunkSize": 0,
+            "Location": ""
+          }
+        ]
+      }
+    }
+  },
+  "StatusWords": {}
+}
