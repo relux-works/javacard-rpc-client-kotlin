@@ -1,20 +1,20 @@
 # Compatibility fixtures
 
-`parity-*.json` contains validated API schemas and ordered package files for the
-counter example, counter fixture, bounded-stream fixture and immutable B6
-bsim-auth IDL. Each of two namespaces has one golden package; workspace,
-stream-memory and simulator options are byte invariant for Kotlin.
-`input-*.identity.json` records original input names and SHA-256 identities.
+The corpus contains the independent counter, bounded-stream, counter-example
+and synthetic SampleStore inputs. SampleStore is authored as record/page storage,
+not a consumer API. Its TOML SHA-256 is
+`46729b4e03cc71d6997de286c2361271a1c281fbc7839556c79de031a2b63847`.
 
-Golden bytes were generated independently by `jcrpc-gen` built from signed core
-tag `v0.4.5`, commit `cfed4182356a4f4609c88f58924aac79c05ae5b6`. All 216
-workspace/memory/simulator/namespace combinations were executed against that
-binary and the extracted backend. File order was checked against the landed
-donor `kotlin.Plugin.Generate` at `ef6e04b`.
+Its baseline outputs were independently produced by signed facade v0.4.5
+(commit `cfed4182356a4f4609c88f58924aac79c05ae5b6`), executable SHA-256
+`adb7c8b8402413391eda07083dbe1512333e44fe4b00d10c2abd324b72bfedf6`.
+The Java matrix adds all54 workspace/lifecycle/simulator/namespace combinations.
+Kotlin packages retain both namespaces. Swift records the intended stream
+refusal. The other three inputs retain their existing baseline provenance.
 
-The pinned B6 input is commit `2d23abdafa1e0f68c6003ab56274b2ac38378ef9`,
-SHA-256 `1be1ed52ac9a85a62d5c5e371a9e22d38f834282681528476ca071e7bfc2cb66`.
-Fixtures are data, so the published backend has no TOML/parser dependency.
+Current source-projection receipts freeze a reviewed API delta only; they are
+not independent behavior, allocation or physical-device evidence. Package order,
+bytes/hashes, complete matrix coverage and input nonmutation remain tested.
 
 `harness-schema.json`, `jvm/src/main/java/` and the seven original named tests in
 `jvm/src/test/kotlin/` come from the landed donor. Additional Kotlin tests check
