@@ -17,15 +17,15 @@ transports can implement `APDUTransport` over BLE, NFC, or any other channel.
 
 - Group: `io.jcrpc`
 - Artifact: `javacard-rpc-client-kotlin`
-- Runtime version: `0.3.0`
+- Runtime version: `0.3.1`
 - Runtime package: `io.jcrpc.client`
-- Canonical repository tag: `v0.3.0`
+- Canonical repository tag: `v0.3.1`
 - Go backend: `github.com/relux-works/javacard-rpc-client-kotlin/codegen`
-- Go module version: `github.com/relux-works/javacard-rpc-client-kotlin v0.3.0`
+- Go module version: `github.com/relux-works/javacard-rpc-client-kotlin v0.3.1`
 - Plugin API dependency: `github.com/relux-works/javacard-rpc/pluginapi v0.1.0`
 
 The root tag selects both the Go backend and the Gradle runtime from the same
-repository commit. See [the v0.3.0 release notes](RELEASE-NOTES-0.3.0.md) for
+repository commit. See [the v0.3.1 release notes](RELEASE-NOTES-0.3.1.md) for
 compatibility and platform limits.
 
 ## Use the pinned release
@@ -33,7 +33,7 @@ compatibility and platform limits.
 Add the backend to a Go composition module:
 
 ```bash
-go get github.com/relux-works/javacard-rpc-client-kotlin/codegen@v0.3.0
+go get github.com/relux-works/javacard-rpc-client-kotlin/codegen@v0.3.1
 ```
 
 Import `github.com/relux-works/javacard-rpc-client-kotlin/codegen` and compose
@@ -42,7 +42,7 @@ Import `github.com/relux-works/javacard-rpc-client-kotlin/codegen` and compose
 For a generated JVM client, check out the matching runtime next to the client:
 
 ```bash
-git clone --branch v0.3.0 https://github.com/relux-works/javacard-rpc-client-kotlin.git
+git clone --branch v0.3.1 https://github.com/relux-works/javacard-rpc-client-kotlin.git
 cd javacard-rpc-client-kotlin
 ./gradlew jar
 ```
@@ -59,7 +59,7 @@ includeBuild("../javacard-rpc-client-kotlin") {
 
 Gradle substitutes the source runtime for the same group/artifact dependency.
 The preserved generator emits a `0.2.0` runtime dependency for v0.4.5 output
-parity; the composite build above selects the runtime at `v0.3.0` explicitly.
+parity; the composite build above selects the runtime at `v0.3.1` explicitly.
 These instructions use a repository checkout and do not require a Maven Central
 publication.
 
