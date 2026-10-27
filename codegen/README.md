@@ -19,15 +19,15 @@ The renderer/templates and required naming/ordering helpers were extracted from
 core commit `ef6e04bfae8dab0f8e1ac40c9bb10713dbf09250`. The renderer bodies,
 including the historical Counter status ordering, are preserved. There is no
 dependency on facade codegen, parser or templates. Root Gradle layout, group,
-artifact and `io.jcrpc.client` package remain unchanged. The root `v0.3.0` tag
-pins Go module `github.com/relux-works/javacard-rpc-client-kotlin v0.3.0` and
-runtime `io.jcrpc:javacard-rpc-client-kotlin:0.3.0` together. The backend depends
+artifact and `io.jcrpc.client` package remain unchanged. The root `v0.3.1` tag
+pins Go module `github.com/relux-works/javacard-rpc-client-kotlin v0.3.1` and
+runtime `io.jcrpc:javacard-rpc-client-kotlin:0.3.1` together. The backend depends
 on `github.com/relux-works/javacard-rpc/pluginapi v0.1.0`.
 
 Generated manifests retain their historical `0.2.0` runtime dependency to keep
 the accepted v0.4.5 output byte identical. Use the [pinned runtime composite
 build](../README.md#use-the-pinned-release) to select the matching source
-runtime. See [v0.3.0 release notes](../RELEASE-NOTES-0.3.0.md).
+runtime. See [v0.3.1 release notes](../RELEASE-NOTES-0.3.1.md).
 
 ## Validation
 
